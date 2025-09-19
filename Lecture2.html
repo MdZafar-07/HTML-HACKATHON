@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <table width="100%">
+            <tr>
+                <td width="83%" valign="top" >
+                    <h1>LECTURE-2</h1>
+                    <h2>📘 Notes: HTML Basics and Structure<h2>
+                </td>
+                <td width="20%" valign="top" >
+                    <aside>
+                        <nav>
+                             <a href="index.html"><button type="button" >🏠Home</button></a>
+                             <a href="./Lecture1.html"><button type="button" >🔵 < Previous </button></a> 
+                             <!-- <a href="./Lecture2.html"><button type="button" >🔵Lecture 2</button></a>  -->
+                             <a href="./Lecture3.html"><button type="button" >🔵Next ></button></a> 
+                             <!-- <a href="./Lecture4.html"><button type="button" >🔵Lecture 4</button></a> 
+                             <a href="./Lecture5.html"><button type="button" >🔵Lecture 5</button></a> 
+                             <a href="./Lecture6.html"><button type="button" >🔵Lecture 6</button></a> -->
+                        </nav>
+                    </aside>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <hr>
+    <main>
+       <nav>
+            <h2><b>Content:</b></h2>
+               
+            <ul>
+                <li><a href="#HTML">What is HTML?</a></li>
+                <li><a href="#Setting up Editor">Setting Up Your Editor</a></li>
+                <li><a href="#HTML Tags">HTML Tags Explained</a></li>
+                <li><a href="#HTML Structure">Basic HTML Structure</a></li>
+                <li><a href="#HTML Elements">HTML Elements</a></li>
+                <li><a href="#Common Tags">Common HTML Tags</a></li>
+                <li><a href="#HTML Attributes">HTML Attributes</a></li>
+            </ul>
+       </nav>
+       <section id="HTML">
+            <table border= "2"  width="100%" cellpadding="15">
+                <thead>
+                    <tr>
+                        <th colspan="2" align="center"><h1>💻 What is HTML?</h1></th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>
+                        <h2>HTML: Hyper Text Markup Language</h2>
+                        <p>HTML stands for <b>H</b>yper<b>T</b>ext <b>M</b>arkup <b>L</b>anguage. It is the standard language used to create and structure the content of a webpage.</p>
+                            <ul>
+                                <li><b>HyperText:</b>This refers to the ability to create links that connect web pages to one another, making the web a connected "web" of information</li>
+                                <li><b>Markup Language:</b>This means you use "tags" to surround your content, giving that content meaning and structure. You are "marking up" a plain text document.</li>
+                            </ul>
+                        <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. It describes the structure of a web page.</p>
+                        <p>HTML consists of a series of elements, which you use to enclose, or wrap, different parts of the content to make it appear or act a certain way. The enclosing tags can make a word or image hyperlink to somewhere else, can italicize words, can make the font bigger or smaller, and so on.</p>
+                        <p>
+                            "First Website:"
+                            <a href="http://info.cern.ch/hypertext/WWW/TheProject.html" target="_blank">http://info.cern.ch/hypertext/WWW/TheProject.html</a>
+                        </p>
+                        <img src="./assets/9.png" alt="HTML Example" width="20%" height="20%">
+                        <!-- <p>For example, the following HTML code:</p>
+                        <pre>
+&lt;h1&gt;This is a heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+                        </pre>
+                        <p>...produces the following output:</p>
+                        <h1>This is a heading</h1>
+                        <p>This is a paragraph.</p>         -->
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <br><br>
+
+
+        <section id="Setting up Editor">
+            <table border= "2"  width="100%" cellpadding="15">
+                <thead>
+                    <tr>
+                        <th colspan="2" align="center"><h1> 💾 Setting Up Your Editor</h1></th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>
+                        <h2>Install Required Software:</h2>
+                        <ol>
+                            <li><b>Install Visual Studio Code</b>
+                                <p>Download and install Visual Studio Code from the official website This is a free piece of software from Microsoft that you will use to write your code.: <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a></p>
+                            </li>
+                            <li><b>Install Visual Studio Code Extensions</b></li>
+                                <p>Open Visual Studio Code and go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window or by pressing `Ctrl+Shift+X`.</p>
+                                <p>Search for and install the following extensions:</p>
+                                <ul>
+                                    <li><b>Live Server</b>:This extension allows you to launch a local development server with live reload feature for static & dynamic pages. It helps you see your changes in real-time as you edit your HTML files.<br>
+                                     <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank">https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer</a> 
+                                    </li><br><br>
+                                    <li><b>HTML Snippets</b>: This extension provides a collection of useful HTML snippets that can speed up your coding process.<br>
+                                    <a href="https://marketplace.visualstudio.com/items?itemName=abusaidm.html-snippets" target="_blank">https://marketplace.visualstudio.com/items?itemName=abusaidm.html-snippets</a>
+                                    </li><br><br>
+                                    <li><b>Prettier - Code formatter</b>: This extension helps in formatting your code consistently, making it more readable.<br>
+                                    <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank">https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode</a>
+                                    </li>
+                                </ul>
+                        </ol>
+                        <img src="./assets/10.png" alt="VS Code Extensions" width="30%" height="30%">
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <br><br>
+
+
+        <section id="HTML Tags">
+            <table border= "2"  width="100%" cellpadding="15">
+                <thead>
+                    <tr>
+                        <th colspan="2" align="center"><h1> ⏪⏩ HTML Tags Explained </h1></th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>
+                        <ol>
+                            <li><h2>The Heading (h1 to h6)</h2></li>
+                                <p><b>What it is :</b>Headings are tags used to define titles and subtitles on your page. They are crucial for creating a logical hierarchy and outline for your content.</p>
+                                <pre><code>
+&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;
+                                </code></pre>
+                            <ul>
+                                <li><b>h1</b> is the most important heading, typically used for main titles.</li>
+                                <li><b>h2</b> to <b>h6</b> are used for subheadings, with decreasing importance.</li>
+                                <li>Headings help with SEO and accessibility by providing structure to your content</li>
+                            </ul>
+                            <p><b>Purpose :</b>To structure your document in a way that is understandable to both humans and machines (like search engines and screen readers). It is not just for making text big; it is for giving the text structural importance.</p>
+                            <hr>
+
+                            <li><h2>The Paragraph(&lt;p&gt;)</h2></li>
+                                <p><b>What it is :</b>The paragraph tag is the most common tag you'll use. It's for grouping sentences and blocks of text together.</p>
+                                <p><b>The Tag: </b>&lt;p&gt;</p>
+                            <p><b>Purpose :</b>To define a distinct paragraph of text. Browsers automatically add a little bit of space before and after a <p> element, separating it from other content. You should not use multiple line breaks; you should use multiple <p> tags.</p>
+                            <pre><code>
+&lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+&lt;p&gt;This is another paragraph of text.&lt;/p&gt;
+                            </code></pre>
+                            <hr>
+                            <li><h2>HTML Horizontal Rules(&lt;hr&gt;)</h2></li>
+                                <p><b>What it is :</b>the &lt;hr&gt; tag defines a thematic break in an HTML page, and is most often displayed as a horizontal rule.</p>
+                                <p><b>The Tag: </b>&lt;hr&gt;</p>
+                            <p><b>Purpose :</b>The &lt;hr&gt; element is used to separate content (or define a change) in an HTML page:</p>
+                            <pre><code>
+&lt;h2&gt;Section 1&lt;/h2&gt;
+&lt;p&gt;This is the first section.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Section 2&lt;/h2&gt;
+&lt;p&gt;This is the second section.&lt;/p&gt;
+                             </code></pre>
+                             <hr>
+                            
+                              <li><h2> The Line Break Tag: (&lt;br&gt;)</h2></li>
+                                <p><b>What it is :</b>This tag tells the browser, "Stop writing on this line and immediately start on the next one." It's like hitting the Enter key once in a poem or an address.</p>
+                                <p><b>The Tag: </b>&lt;br&gt;</p>
+                            <p><b>Purpose :</b>Creates a single line break.</p>
+                            <pre><code>
+&lt;p&gt;This is the first line.&lt;br&gt;This is the second line.&lt;/p&gt;
+                            </code></pre>
+                            <hr>
+                            <li><h2> List Elements: (&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;)</h2></li>
+                                <p><b>What it is :</b> These tags are used to create lists. This is a perfect example of nesting.</p>
+                                <p><b>The Tag: </b>&lt;ul&gt;( An <b>U</b>nordered <b>L</b>ist. It creates a bulleted list.)</p>
+                                <p><b>The Tag: </b>&lt;ol&gt;(An <b>O</b>rdered <b>L</b>ist. It creates a numbered list.)</p>
+                                <p><b>The Tag: </b>&lt;li&gt;( A <b>L</b>ist <b>I</b>tem.)</p>
+                            <p><b>Purpose :</b>To group related items together in a list format..</p>
+                            <pre><code>
+&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;  
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+  &lt;li&gt;First Item&lt;/li&gt;
+    &lt;li&gt;Second Item&lt;/li&gt;
+    &lt;li&gt;Third Item&lt;/li&gt;
+&lt;/ol&gt;
+                            </code></pre>
+                            <hr>
+
+                            <li><h2> The Anchor Tag: (&lt;a&gt;)</h2></li>
+                                <p><b>What it is :</b> The Anchor tag is what makes the web "hypertext." It is used to create a hyperlink to another webpage, a file, or a location within the same page.</p>
+                                <p><b>The Tag: </b>&lt;a&gt;</p>
+                            <p><b>Purpose :</b>To make text (or an image) clickable, allowing users to navigate. It requires an attribute called href (hypertext reference) to specify the destination URL.</p>
+                            <pre><code>
+&lt;a href="https://www.example.com"&gt;This is a link to Example.com&lt;/a&gt;
+                            </code></pre>
+                            <h3>HTML Links - The target Attribute</h3>
+                            <p>
+                                By default, the linked page will be displayed in the current browser window. To change this, you must specify another target for the link.<br><br>
+                                The target attribute specifies where to open the linked document.<br><br>
+                                The target attribute can have one of the following values:<br><br>
+                                <ul>
+                                    <li>_self: Opens the linked document in the same frame as it was clicked (this is default)</li>
+                                    <li>_blank: Opens the linked document in a new window or tab</li>
+                                    <li>_parent: Opens the linked document in the parent frame</li>
+                                    <li>_top: Opens the linked document in the full body of the window</li>
+                                </ul>    
+                            </p>
+                            <hr>
+
+                            <li><h2> The Image Tag: (&lt;img&gt;)</h2></li>
+                                <p><b>What it is :</b>  The Image tag is a self-closing tag used to embed an image onto your page.</p>
+                                <p><b>The Tag: </b>&lt;img&gt;</p>
+                            <p><b>Purpose :</b>To display a visual image. It requires two main attributes:
+                                <ul>
+                                    <li><b>src</b>: Specifies the path to the image file.</li>
+                                    <li><b>alt</b>: Provides alternative text for the image if it cannot be displayed.</li>
+                                </ul>
+                            </p>
+                            <pre><code>
+&lt;img src="path/to/image.jpg" alt="Description of image"&gt;
+                            </code></pre>
+                        </ol>
+                        <img src="./assets/11.png" alt="Common HTML Tags" width="50%" height="50%">
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <br><br>
+
+
+        <section id="HTML Structure">
+            <table border= "2"  width="100%" cellpadding="15">
+                <thead>
+                    <tr>
+                        <th colspan="2" align="center"><h1>🌐 Basic HTML Structure</h1></th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>
+                        <h2>HTML Document Structure:</h2>
+                        <p>An HTML document has a specific structure that includes several key elements:</p>
+                        <ul>
+                            <li><b>&lt;!DOCTYPE html&gt;</b>: Declares the document type and version of HTML.</li>
+                            <li><b>&lt;html&gt;</b>: The root element that wraps all the content on the page.</li>
+                            <li><b>&lt;head&gt;</b>: Contains meta-information about the document, such as its title, character set, and links to stylesheets or scripts.</li>
+                            <li><b>&lt;title&gt;</b>: Sets the title of the webpage, which appears in the browser tab.</li>
+                            <li><b>&lt;body&gt;</b>: Contains all the content that will be displayed on the webpage, including text, images, links, etc.</li>
+                        </ul>
+                        <p>Here is a basic example of an HTML document structure:</p>
+                        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My First Webpage&lt;/title&gt; 
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Webpage&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph of text on my first webpage.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                        </code></pre>  
+                        <img src="./assets/12.jpg" alt="HTML Structure" width="50%" height="50%"> 
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <br><br>
+
+
+        <section id="HTML Elements">
+            <table border= "2"  width="100%" cellpadding="15">
+                <thead>
+                    <tr>
+                        <th colspan="2" align="center"><h1>▤ HTML Elements</h1></th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>
+                        <h2>HTML Elements Overview:</h2>
+                        <p>HTML elements are the building blocks of HTML pages. They are defined by tags, which usually come in pairs: an opening tag and a closing tag. The content goes between these tags.</p>
+                        <ul>
+                            <li><b>Opening Tag:</b> This is the start of an element and is written with angle brackets. For example, &lt;p&gt; for a paragraph.</li>
+                            <li><b>Closing Tag:</b> This indicates the end of an element and is written with a forward slash before the tag name. For example, &lt;/p&gt; for closing a paragraph.</li>
+                            <li><b>Self-Closing Tag:</b> Some tags do not have a closing tag and are self-closing, such as &lt;img&gt; for images or &lt;br&gt; for line breaks.</li>
+                        </ul>
+                        <p>Example of an HTML element:</p>
+                        <pre><code> 
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;img src="image.jpg" alt="An image"&gt;
+                        </code></pre> 
+                        <img src="./assets/13.png" alt="HTML Elements" width="50%" height="50%">  
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <br><br>
+
+
+        <section id="Common Tags">
+            <table border= "2"  width="100%" cellpadding="15">
+                <thead>
+                    <tr>
+                        <th colspan="2" align="center"><h1>💻Common HTML Tags</h1></th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>
+                        <h2>Frequently Used HTML Tags:</h2>
+                        <p>Here are some of the most commonly used HTML tags and their purposes:</p>
+                            <table border="1" cellpadding="10">
+                                <tr>
+                                    <th>Tag</th>
+                                    <th>Description</th>
+                                <tr>
+                                    <td>&lt;h1&gt; to &lt;h6&gt;</td>
+                                    <td>Headings, with &lt;h1&gt; being the most important and &lt;h6&gt; the least.</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;p&gt;</td>
+                                    <td>Paragraphs, used for blocks of text.</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;a&gt;</td>
+                                    <td>Anchor tags, used to create hyperlinks.</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;img&gt;</td>
+                                    <td>Image tags, used to embed images.</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;ul&gt;</td>
+                                    <td>Unordered lists, used for bulleted lists.</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;ol&gt;</td>
+                                    <td>Ordered lists, used for numbered lists.</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;li&gt;</td>
+                                    <td>List items, used within &lt;ul&gt; or &lt;ol&gt; to define individual items.</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;div&gt;</td>
+                                    <td>Division tags, used as a container for other elements to style them with CSS or manipulate them with JavaScript.</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;span&gt;</td>
+                                    <td>Span tags, used to group inline-elements in a document.</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;br&gt;</td>
+                                    <td>Line break, used to insert a single line break.</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;hr&gt;</td>
+                                    <td>Horizontal rule, used to create a thematic break in content.</td>
+                                </tr>
+                            </table>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <br><br>
+
+
+        <section id="HTML Attributes">
+            <table border= "2"  width="100%" cellpadding="15">
+                <thead>
+                    <tr>
+                        <th colspan="2" align="center"><h1> ⛺ HTML Attributes</h1></th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>
+                        <h2>Understanding HTML Attributes:</h2>
+                        <p>Attributes provide additional information about HTML elements. They are always included in the opening tag and usually come in name/value pairs like name="value".</p>
+                        <ul>
+                            <li><b>Common Attributes:</b>
+                                <ul>
+                                    <li><b>id</b>: A unique identifier for an element.</li>
+                                    <li><b>class</b>: A class name for an element, used for styling multiple elements with the same class.</li>
+                                    <li><b>src</b>: Specifies the source of an image or script.</li>
+                                    <li><b>href</b>: Specifies the URL of a link.</li>
+                                    <li><b>alt</b>: Provides alternative text for an image if it cannot be displayed.</li>
+                                    <li><b>title</b>: Provides additional information about an element, often displayed as a tooltip.</li>
+                                </ul>
+                            </li>
+                            <li><b>Example of Attributes in Use:</b></li>
+                        </ul>
+                        <pre><code> 
+&lt;a href="https://www.example.com" target="_blank" title="Visit Example.com"&gt;This is a link to Example.com&lt;/a&gt;
+&lt;img src="image.jpg" alt="An image" width="500" height="600"&gt;
+                        </code></pre>
+
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <br><br>
+    <br><br>
+    <hr>
+   <hr>
+ <footer>
+<nav>
+  <br><br>
+  <p><h3>Navigate to:</h3></p>
+  <table border="2" width="100%" cellpadding="15">
+    <tr>
+      <td>
+          <a href="./index.html"> 🏠 Home</a> |
+          <a href="./Lecture1.html"> 🔗 Lecture 1</a> |
+          <a href="./Lecture2.html"> 🔗 Lecture 2</a> |
+          <a href="./Lecture3.html"> 🔗 Lecture 3</a> |
+          <a href="./Lecture4.html"> 🔗 Lecture 4</a> |
+          <a href="./Lecture5.html"> 🔗 Lecture 5</a> |
+          <a href="./Lecture6.html"> 🔗 Lecture 6</a>
+          <br><br>
+          <a href="#top">⬆ Back to Top</a>
+      </td>
+    </tr>
+   </table>
+</nav>
+<br><br>
+<hr>
+  <table width="100%">
+    <tr>
+      <td >
+        <p> Defence-Book &copy; 2025. All rights reserved.</p>
+        <p>Follow me:
+           <a href="https://x.com/MdZafar_07">Twitter</a> | 
+           <a href="https://linkedin.com/in/md-zafaruddin-35236427b">LinkedIn</a>
+        </p>
+      </td>
+    </tr>
+  </table> 
+</footer>
+</body>
+</html>

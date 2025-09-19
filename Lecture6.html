@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LECTURE-6: HTML Media Tag, Deployment</title>
+</head>
+<body>
+	<header>
+        <table width="100%">
+          <tr>
+                <td width="83%" valign="top" >
+                    <h1>LECTURE-6</h1>
+                    <h2>📘 Notes: HTML Media Tag, Deployment<h2>
+                </td>
+                <td width="20%" valign="top" >
+                    <aside>
+                        <nav>
+                             <a href="index.html"><button type="button" >⭕Home</button></a>
+                             <!-- <a href="./Lecture1.html"><button type="button" >🔵Lecture 1</button></a>  -->
+                             <!-- <a href="./Lecture2.html"><button type="button" >🔵Lecture 2</button></a>  -->
+                             <!-- <a href="./Lecture3.html"><button type="button" >🔵Lecture 3</button></a>  -->
+                             <!-- <a href="./Lecture4.html"><button type="button" >🔵Lecture 4</button></a>  -->
+                             <a href="./Lecture5.html"><button type="button" >🔵 < Previous</button></a> 
+                             <!-- <a href="./Lecture6.html"><button type="button" >🔵Lecture 6</button></a> -->
+                        </nav>
+                    </aside>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <hr>
+	<main>
+        <nav>
+			<h2><b>Content:</b></h2>
+			<ul>
+				<li><a href="#Introduction to HTML Media">Introduction to HTML Media</a></li>
+				<li><a href="#Basic Video Element">Basic Video Element</a></li>
+				<li><a href="#Video Attributes">Video Attributes</a></li>
+				<li><a href="#Audio Element">Audio Element</a></li>
+				<li><a href="#Source Element">Source Element</a></li>
+				<li><a href="#Track Element">Track Element</a></li>
+				<li><a href="#HTML Entities">HTML Entities</a></li>
+                <li><a href="#Summary">Summary</a></li>
+			</ul>
+		</nav>
+		<section id="Introduction to HTML Media">
+			<table border="2" width="100%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>📁 Introduction to HTML Media</h1></th>
+                    </tr>
+				</thead>
+                <tr>
+                    <td>
+                        <h2>First Principle: The Web is More Than Text and Image</h2>
+                        <p>The fundamental truth is that a webpage should be able to deliver any kind of content, not just static text and pictures. For years, this was a major problem. To play a video or audio file, browsers had to rely on third-party plugins like Adobe Flash, QuickTime, or Silverlight. This was inefficient, insecure, and inconsistent across different computers.</p><br>
+                        <h3>The Core Problem</h3>
+                        <p>How can we embed video and audio into a webpage in a standardized, native, and plugin-free way? We need a universal system that works on every modern browser, from a desktop PC to a mobile phone, without requiring the user to install anything extra</p>
+                        <h3>The Logical Solution</h3>
+                        <p>The solution was to create dedicated HTML tags whose sole purpose is to embed and control media: the &lt;video&gt; and &lt;audio&gt; tags</p>
+                    </td>
+                </tr>
+			</table>
+		</section>
+		<br><br>
+
+		<section id="Basic Video Element">
+			<table border="2" width="100%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>📒 Basic Video Element</h1></th>
+                    </tr>
+				</thead>
+                <tr>
+                    <td>
+                        <h2>The Most Basic Implementation</h2>
+                        <pre><code><code>
+&lt;video src="my-awesome-video.mp4"&gt;&lt;/video&gt;</code>
+                        </code></pre>
+                        <h3>The Problem</h3>
+                        <p>If you put this on a page, you'll just see the first frame of the video as a static image. You can't play it, pause it, or change the volume. It's not a video player; it's just a video frame.</p>
+                        <h3>The Solution: Controls Attribute</h3>
+                        <p>The controls attribute is a boolean attribute. You don't need to set it to a value; its mere presence turns the feature on.</p>
+                        <pre><code>
+<code>&lt;video src="my-awesome-video.mp4" controls&gt;&lt;/video&gt;</code>
+                        </code></pre>
+                        <p><b>Results:</b>You now have a fully functional video player on your page, complete with a play/pause button, a timeline scrubber, volume controls, and a fullscreen option. This is the simplest, most effective way to embed a video.</p>
+                        <img src="./assets/vid play.jpg" alt="video player with control" width="30% height=30%">
+                    </td>
+                </tr>
+			</table>
+		</section>
+		<br><br>
+
+		<section id="Video Attributes">
+			<table border="2" width="100%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>🌐 Video Attributes</h1></th>
+                    </tr>
+				</thead>
+                <tr>
+                    <td>
+                        <h2>Controlling Video Behavior and Appearance</h2>
+                        <ul>
+                            <li><h3>Width & Height</h3>
+                                <p>Just like with an &lt;img&gt; tag, you can set the dimensions of the player.</p>
+                                <pre><code>
+&lt;video src="video.mp4" width="640" height="360" controls&gt;&lt;/video&gt;
+                                </code></pre>
+                            </li>
+                            <li><h3>Autoplay</h3>
+                                <p>This attribute will make the video start playing as soon as the page loads.</p>
+                                <h3>CRITICAL CAVEAT:</h3>
+                                <p>Modern browsers will block autoplay with sound because it's a terrible user experience. To make autoplay work, you almost always have to add the muted attribute as well.</p>
+                                <pre><code>
+&lt;video src="video.mp4" autoplay muted controls&gt;&lt;/video&gt;
+                                </code></pre>
+                            </li>
+                            <li><h3>Loop</h3>
+                            <p>Makes the video automatically restart from the beginning when it finishes. Great for background videos.</p>
+                            <pre><code>
+&lt;video src="video.mp4" loop controls&gt;&lt;/video&gt;
+                            </code></pre>
+                            </li>
+                            <li><h3>Poster</h3>
+                                <p>This is a fantastic feature for user experience. It specifies an image to display before the video is played, just like a YouTube thumbnail.</p>
+                                <pre><code>
+&lt;video src="video.mp4" poster="images/video-thumbnail.jpg" controls&gt;&lt;/video&gt;
+                                </code></pre>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+			</table>
+		</section>
+		<br><br>
+
+		<section id="Audio Element">
+			<table border="2" width="100%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>📃 Audio Element</h1></th>
+                    </tr>
+				</thead>
+                <tr>
+                    <td>
+                        <h2>The &lt;audio&gt; Tag</h2>
+                        <p>The &lt;audio&gt; tag works almost identically to the &lt;video&gt; tag, just without the visual component.</p>
+                        <h3>The Problem</h3>
+                        <p>How do we embed a sound file (like a song or a podcast) with player controls?</p>
+                        <h3>The Solution</h3>
+                        <p>Use the &lt;audio&gt; tag with the controls attribute.</p>
+                        <pre><code>
+&lt;p&gt;Listen to our theme song:&lt;/p&gt;
+&lt;audio src="audio/theme-song.mp3" controls&gt;&lt;/audio&gt;
+                        </code></pre>
+                        <p><b>Result:</b> A clean audio player with play/pause, a timeline, and volume controls. It uses the same attributes like autoplay, loop, and muted.</p>
+                        <img src="./assets/aud play.png" alt=" Audio player with controls" width="30%" height="30%">
+                    </td>
+                </tr>
+			</table>
+		</section>
+		<br><br>
+
+		<section id="Source Element">
+			<table border="2" width="100%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>📑Source Element</h1></th>
+                    </tr>
+				</thead>
+                <tr>
+                    <td>
+                        <h2>Source Element for Browser Compatibility</h2>
+                        <h3>The Problem: Not all browsers support the same video formats.</h3>
+                        <p>Chrome might prefer the modern .webm format, while Safari on an iPhone might only support .mp4. If you only provide one src, some of your users won't be able to see your video.</p>
+                        <h3>The Solution: The &lt;source&gt; Element</h3>
+                        <p>nstead of putting the src on the &lt;video&gt; tag itself, you can provide multiple formats inside the tag using the &lt;source&gt; element. The browser will go down the list and play the first one it supports.</p>
+                        <pre><code>
+&lt;video controls poster="images/thumbnail.jpg"&gt;
+  &lt;source src="videos/my-video.webm" type="video/webm"&gt;
+  &lt;source src="videos/my-video.mp4" type="video/mp4"&gt;
+  Sorry, your browser doesn't support embedded videos.
+&lt;/video&gt;
+                        </code></pre>
+                        <p>This is the robust, professional way to embed media. The type attribute tells the browser what kind of file it is so it doesn't have to waste time downloading a file it can't play.</p>
+                        <h3>Common Video Formats</h3>
+                        <ul>
+                            <li><b>.mp4 (H.264 codec):</b>This is the most widely supported format today. Almost all modern browsers can play it.</li>
+                            <li><b>.webm (VP8/VP9 codec)</b>This is an open-source format heavily promoted by Google. It has excellent support in Chrome and Firefox.</li>
+                            <li><b>.ogg (Theora codec):</b>This is an open-source format heavily promoted by Google. It has excellent support in Chrome and Firefox.</li>
+                        </ul>
+                        <img src="./assets/vid form.png" alt="Browser compatibility chart" width="30%" height="30%">
+                    </td>
+                </tr>
+			</table>
+		</section>
+        <br><br>
+
+		<section id="Track Element">
+			<table border="2" width="100%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>📑Track Element</h1></th>
+                    </tr>
+				</thead>
+                <tr>
+                    <td>
+                        <h2>Browser compatibility chart</h2>
+                        <h3>The Problem: Your video is not accessible.</h3>
+                        <p>Users who are deaf or hard of hearing can't understand your video. Users in a noisy environment (or a quiet office) can't listen to the audio. Users speaking another language won't understand it.</p>
+                        <h3>The Solution: The &lt;track&gt; Element</h3>
+                        <p>The &lt;track&gt; element allows you to add timed text tracks, such as subtitles or captions. It's a self-closing tag that points to a special text file, usually in <b>WebVTT (.vtt) format</b></p>
+                        <pre><code>
+
+&lt;video controls&gt;
+  &lt;source src="video.webm" type="video/webm"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+
+  &lt;!-- English Captions for the hearing impaired --&gt;
+  &lt;track src="captions_en.vtt" kind="captions" srclang="en" label="English"&gt;
+
+  &lt;!-- Spanish Subtitles for translation --&gt;
+  &lt;track src="subtitles_es.vtt" kind="subtitles" srclang="es" label="Español"&gt;
+&lt;/video&gt;
+                        </code></pre>
+                        <h3>Track Attributes</h3>
+                        <ul>
+                            <li><b>src:</b>Path to the .vtt file.</li>
+                            <li><b>kind:</b>The type of track. The most common are:
+                              <ul>
+                                <li><b>captions:</b>A direct transcription of the dialogue and important sounds, for users who can't hear the audio.</li>
+                                <li><b>subtitles:</b>A translation of the dialogue into another language</li>
+                                <li><b>descriptions:</b> A separate audio description for visually impaired users.</li>
+                              </ul>  
+                            </li>
+                            <li><b>srclang:</b> The language of the track file (e.g., "en" for English).</li>
+                            <li><b>label:</b>The name that appears in the video player's captions menu.</li>
+                        </ul>
+                        <p>This makes your video accessible to a much wider audience and is a critical part of professional web development.</p>
+                        <img src="./assets/vid cap.jpg" alt="Video with captions enabled" width="30%" height="30%">
+                    </td>
+                </tr>
+			</table>
+		</section>
+        <br><br>
+
+		<section id="HTML Entities">
+			<table border="2" width="100%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>📑HTML Entities</h1></th>
+                    </tr>
+				</thead>
+                <tr>
+                    <td>
+                        <h2>Special Characters in HTML</h2>
+                        <p>HTML entities are used to display reserved characters in HTML. For example, if you want to display a copyright symbol or angle brackets, you need to use entities.</p><br>
+                        <h2>The Two Ways to Create the Copyright Symbol &copy;</h2>
+                        <p>You can use either the entity name or the entity number. Both produce the exact same result. The entity name is generally easier to remember</p>
+                        <ol>
+                            <li><h2>Using the Entity Name (Recommended):</h2>
+                                <p>This is the most common and readable method.</p>
+                                <p><b>Code:</b>&copy;</p>
+                                <pre><code>
+&lt;footer&gt;
+    &lt;p&gt;Copyright &amp;copy; 2024 My Awesome Website. All Rights Reserved.&lt;/p&gt;
+&lt;/footer&gt;
+                                </code></pre>
+                            </li>
+                            <li><h2>Using the Entity Number:</h2>
+                                <p>This method uses the character's numerical code. It works just as well but is less descriptive.</p>
+                                p><b>Code:</b>&#169;</p>
+                                <pre><code>
+&lt;footer&gt;
+    &lt;p&gt;Copyright &amp;#169; 2025 My Awesome Website. All Rights Reserved.&lt;/p&gt;
+&lt;/footer&gt;
+                                </code></pre>
+                            </li>
+                        </ol>
+                        <h3>Other Common Symbol Entities</h3>
+                        <table border="1">
+                    <tbody><tr>
+                        <th>Symbol</th>
+                        <th>Description</th>
+                        <th>Entity Name</th>
+                        <th>Entity Number</th>
+                    </tr>
+                    <tr>
+                        <td>©</td>
+                        <td>Copyright</td>
+                        <td>&amp;copy;</td>
+                        <td>&amp;#169;</td>
+                    </tr>
+                    <tr>
+                        <td>®</td>
+                        <td>Registered Trademark</td>
+                        <td>&amp;reg;</td>
+                        <td>&amp;#174;</td>
+                    </tr>
+                    <tr>
+                        <td>™</td>
+                        <td>Trademark</td>
+                        <td>&amp;trade;</td>
+                        <td>&amp;#8482;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;</td>
+                        <td>Less-than (for showing code)</td>
+                        <td>&amp;lt;</td>
+                        <td>&amp;#60;</td>
+                    </tr>
+                    <tr>
+                        <td>&gt;</td>
+                        <td>Greater-than (for showing code)</td>
+                        <td>&amp;gt;</td>
+                        <td>&amp;#62;</td>
+                    </tr>
+                    <tr>
+                        <td>&amp;</td>
+                        <td>Ampersand</td>
+                        <td>&amp;amp;</td>
+                        <td>&amp;#38;</td>
+                    </tr>
+                    <tr>
+                        <td>"</td>
+                        <td>Double Quote</td>
+                        <td>&amp;quot;</td>
+                        <td>&amp;#34;</td>
+                    </tr>
+                    <tr>
+                        <td>€</td>
+                        <td>Euro Sign</td>
+                        <td>&amp;euro;</td>
+                        <td>&amp;#8364;</td>
+                    </tr>
+                </tbody></table>
+                <h4>Why do we need entities for &lt; and &gt;?</h4>
+                <p>Because the browser would interpret &lt; and &gt; as the start or end of an HTML tag. If you want to literally display the text &lt;p&gt; on your page, you must write &amp;lt;p&amp;gt;..</p>
+                    </td>
+                </tr>
+			</table>
+		</section>
+        <br><br>
+
+		<section id="Summary">
+			<table border="2" width="100%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>Summary</h1></th>
+                    </tr>
+				</thead>
+                <tr>
+                    <td>
+                        <p>In this lecture, we covered HTML media elements and entities:</p>
+                        <ul>
+                            <li>The <code>&lt;video&gt;</code> element for embedding videos</li>
+                            <li>Video attributes like controls, autoplay, loop, and poster</li>
+                            <li>The <code>&lt;audio&gt;</code> element for embedding audio</li>
+                            <li>The <code>&lt;source&gt;</code> element for browser compatibility</li>
+                            <li>The <code>&lt;track&gt;</code> element for accessibility</li>
+                            <li>HTML entities for special characters</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </section>
+            <h2>END OF COURSE</h2>
+	</main>
+	 <br><br>
+    <br><br>
+    <hr>
+  <hr>
+ <footer>
+<nav>
+  <br><br>
+  <p><h3>Navigate to:</h3></p>
+  <table border="2" width="100%" cellpadding="15">
+    <tr>
+      <td>
+          <a href="./index.html"> 🏠 Home</a> |
+          <a href="./Lecture1.html"> 🔗 Lecture 1</a> |
+          <a href="./Lecture2.html"> 🔗 Lecture 2</a> |
+          <a href="./Lecture3.html"> 🔗 Lecture 3</a> |
+          <a href="./Lecture4.html"> 🔗 Lecture 4</a> |
+          <a href="./Lecture5.html"> 🔗 Lecture 5</a> |
+          <a href="./Lecture6.html"> 🔗 Lecture 6</a>
+          <br><br>
+          <a href="#top">⬆ Back to Top</a>
+      </td>
+    </tr>
+   </table>
+</nav>
+<br><br>
+<hr>
+  <table width="100%">
+    <tr>
+      <td >
+        <p> Defence-Book &copy; 2025. All rights reserved.</p>
+        <p>Follow me:
+           <a href="https://x.com/MdZafar_07">Twitter</a> | 
+           <a href="https://linkedin.com/in/md-zafaruddin-35236427b">LinkedIn</a>
+        </p>
+      </td>
+    </tr>
+  </table> 
+</footer>
+</body>
+</html>
+              
+          
+    
+  
+             
+              
+         
+
+              
+              
+         

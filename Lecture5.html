@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LECTURE-5: HTML FORMS</title>
+</head>
+<body>
+	<header>
+        <table width="100%">
+          <tr>
+                <td width="83%" valign="top" >
+                    <h1>LECTURE-5</h1>
+                    <h2>📘 Notes: HTML FORMS<h2>
+                </td>
+                <td width="20%" valign="top" >
+                    <aside>
+                        <nav>
+                             <a href="index.html"><button type="button" >⭕Home</button></a>
+							 <!-- <a href="./Lecture1.html"><button type="button" >🔵Lecture 1</button></a>  -->
+							 <!-- <a href="./Lecture2.html"><button type="button" >🔵Lecture 2</button></a>  -->
+							 <!-- <a href="./Lecture3.html"><button type="button" >🔵Lecture 3</button></a>  -->
+							 <a href="./Lecture4.html"><button type="button" >🔵 < Previous </button></a> 
+							 <!-- <a href="./Lecture5.html"><button type="button" >🔵Lecture 5</button></a>  -->
+							 <a href="./Lecture6.html"><button type="button" >🔵Next > </button></a>
+                        </nav>
+                    </aside>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <hr>
+	<main>
+		<nav>
+			<h2><b>Content:</b></h2>
+			<ul>
+				<li><a href="#Introduction to Forms">Introduction to Forms</a></li>
+				<li><a href="#The Form Tag">The Form Tag</a></li>
+				<li><a href="#Input Elements">Input Elements</a></li>
+				<li><a href="#Text Inputs">Text Inputs</a></li>
+				<li><a href="#Selection Inputs">Selection Inputs</a></li>
+				<li><a href="#Other Input Types">Other Input Types</a></li>
+				<li><a href="#Textarea Element">Textarea Element</a></li>
+				<li><a href="#Select Dropdown">Select Dropdown</a></li>
+				<li><a href="#Button Elements">Button Elements</a></li>
+				<li><a href="#Complete Form Example">Complete Form Example</a></li>
+			</ul>
+		</nav>
+		<section id="Introduction to Forms">
+			<table border="2" width="100%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>📁 Introduction to Forms</h1></th>
+                    </tr>
+				</thead>
+				<tr>
+					<td>
+						<p>HTML forms are used to collect user input. They are essential for interactive websites, allowing users to submit data, make selections, and interact with web applications.Forms contain various input elements like text fields, checkboxes, radio buttons, and dropdown menus. When a user submits a form, the data is sent to a server for processing.</p>
+						<img src="./assets/form struct.jpg" alt="Image: Form Structure Diagram" width="30%" height="30%">
+					</td>
+				</tr>
+			</table>
+		</section>
+		<br><br>
+
+		<section id="The Form Tag">
+			<table border="2" width="100%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>📒 The Form Tag</h1></th>
+                    </tr>
+				</thead>
+				<tr>
+					<td>
+						<p>The &lt;form&gt; element is a container for all form elements. It defines how the form data will be submitted.</p>
+						<pre><code>
+
+&lt;form action="/submit-form" method="POST"&gt;
+  &lt;!-- Form elements go here --&gt;
+&lt;/form&gt;
+						</code></pre>
+						<h3>Forms Attributes:</h3>
+						<ul>
+							<li><strong>action</strong>: Specifies where to send the form data when submitted</li>
+							<li><strong>method</strong>: Defines the HTTP method to use (GET or POST)</li>
+							<li><strong>target</strong>: Specifies where to display the response</li>
+							<li><strong>autocomplete</strong>: Enables or disables autocomplete</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</section>
+		<br><br>
+
+		<section id="Input Elements">
+			<table border="2" width="100%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>🌐 Input Elements</h1></th>
+                    </tr>
+				</thead>
+				<tr>
+					<td>
+						<p>The &lt;input&gt; element is the most important form element. It can be displayed in many ways, depending on the type attribute.</p>
+						<pre><code>
+&lt;input type="text" name="username" placeholder="Enter your username"&gt;
+						</code></pre>
+						<h3>Common Input Attributes:</h3>
+						<ul>
+							<li><strong>type</strong>: Specifies the input type (text, password, checkbox, etc.)</li>
+							<li><strong>name</strong>: Specifies the name of the input (important for form submission)</li>
+							<li><strong>value</strong>: Specifies the default value</li>
+							<li><strong>placeholder</strong>: Provides a hint about the expected value</li>
+							<li><strong>required</strong>: Specifies that the input must be filled out</li>
+                		</ul>
+						<img src="./assets/input.jpg" alt="Image: Input Types Comparison" width="30%" height="30%">
+					</td>
+					
+				</tr>
+			</table>
+		</section>
+		<br><br>
+
+		<section id="Text Inputs">
+			<table border="2" width="100%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>📃 Text Inputs</h1></th>
+                    </tr>
+				</thead>
+				<tr>
+					<td>
+						<ol>
+							<li><h3>Text Input</h3>
+								<p>Single-line text input field:</p>
+								<input type="text" placeholder="Enter text here">
+								<pre><code>
+&lt;input type="text" placeholder="Enter text here"&gt;
+								</code></pre>
+							</li>
+							<li><h3>Password Input</h3>
+								<p>Password field (characters are masked):</p>
+								<input type="password" placeholder="Enter password here">
+								<pre><code>
+&lt;input type="password" placeholder="Enter password here"&gt;
+								</code></pre>
+							</li>
+							<li><h3>Email Input</h3>
+								<p>Email address field with validation:</p>
+								<input type="email" placeholder="Enter email here">
+								<pre><code>
+&lt;input type="email" placeholder="Enter email here"&gt;
+								</code></pre>
+							</li>
+							<li><h3>Number Input</h3>
+								<p>Numeric input field:</p>
+								<input type="number" placeholder="Enter number here">
+								<pre><code>
+&lt;input type="number" placeholder="Enter number here"&gt;
+								</code></pre>
+							</li>
+						</ol>
+					</td>
+				</tr>
+			</table>
+		</section>
+		<br><br>
+
+		<section id="Selection Inputs">
+			<table border="2" width="100%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>📑Selection Inputs</h1></th>
+                    </tr>
+				</thead>
+				<tr>
+					<td>
+						<ol>
+							<li><h3>Radio Buttons</h3>
+								<p>Allow selection of one option from multiple choices:</p>
+								<input type="radio" name="gender" value="male">
+								Male
+								<input type="radio" name="gender" value="female">
+								Female
+								<input type="radio" name="gender" value="other">
+								Other
+								<pre><code>
+&lt;input type="radio" name="gender" value="male"&gt; Male
+&lt;input type="radio" name="gender" value="female"&gt; Female
+&lt;input type="radio" name="gender" value="other"&gt; Other
+								</code></pre>
+							</li>
+							<li><h3>checkboxes</h3>
+								<p>Allow selection of multiple options:</p>
+								<input type="checkbox" name="hobby" value="sports">
+								Sports
+								<input type="checkbox" name="hobby" value="reading">
+								Reading
+								<input type="checkbox" name="hobby" value="music">
+								Music
+								<pre><code>
+&lt;input type="checkbox" name="hobbby" value="sports"&gt; Sports
+&lt;input type="checkbox" name="hobbby" value="reading"&gt;Reading
+&lt;input type="checkbox" name="hobbby" value="music"&gt; Music
+								</code></pre>
+							</li>
+						</ol>
+						<img src="./assets/radio.jpg" alt="Image: Radio vs Checkbox Comparison" width="30%" height="30%">
+					</td>
+				</tr>
+			</table>
+		</section>
+		<br><br>
+
+		<section id="Other Input Types">
+			<table border="2" width="100%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>📑Other Input Types</h1></th>
+                    </tr>
+				</thead>
+				<tr>
+					<td>
+						<ol>
+							<li><h3>Date Input</h3>
+								<p>Date picker control:</p>
+								<input type="date">
+								<pre><code>
+&lt;input type="date"&gt;
+								</code></pre>
+							</li>
+							<li><h3>Colour Input</h3>
+								<p>Color picker control:</p>
+								<input type="color">
+								<pre><code>
+&lt;input type="color"&gt;
+								</code></pre>
+							</li>
+							<li><h3>Range</h3> Input</h3>
+								<p>Slider control for selecting a value from a range:</p>
+								<input type="range" min="0" max="100">
+								<pre><code>
+&lt;input type="range" min="0" max="100"&gt;
+								</code></pre>
+							</li>
+							<li><h3>File Input</h3>
+								<p>File upload control:</p>
+								<input type="file">
+								<pre><code>
+&lt;input type="file"&gt;
+								</code></pre>
+							</li>
+						</ol>
+					</td>
+				</tr>
+			</table>
+		</section>
+		<br><br>
+
+		<section id="Textarea Element">
+			<table border="2" width="100%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>📑Textarea Element</h1></th>
+                    </tr>
+				</thead>
+				<tr>
+					<td>
+						<p>The &lt;textarea&gt; element defines a multi-line text input control:</p>
+						<textarea rows="4" cols="50" placeholder="Enter your message here"></textarea>
+						<pre><code>
+&lt;textarea rows="4" cols="50" placeholder="Enter your message here"&gt;&lt;/textarea&gt;
+						</code></pre>
+						<h3>Textarea Attributes:</h3>
+						<ul>
+							<li><strong>rows</strong>: Specifies the visible number of lines</li>
+							<li><strong>cols</strong>: Specifies the visible width</li>
+							<li><strong>placeholder</strong>: Provides a hint about the expected value</li>
+                		</ul>
+						<img src="./assets/textarea.jpg" alt="textarea example" width="30%" height="30%">
+					</td>
+				</tr>
+			</table>
+		</section>
+		<br><br>
+
+		<section id="Select Dropdown">
+			<table border="2" width="100%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>📑Select Dropdown</h1></th>
+                    </tr>
+				</thead>
+				<tr>
+					<td>
+						<p>The &lt;select&gt; element defines a drop-down list:</p>
+						<select>
+							<option value="">Select an option</option>
+							<option value="html">HTML</option>
+							<option value="css">CSS</option>
+							<option value="js">JavaScript</option>
+						</select>
+						<pre><code>
+&lt;select&gt;
+  &lt;option value=""&gt;Select an option&lt;/option&gt;
+  &lt;option value="html"&gt;HTML&lt;/option&gt;
+  &lt;option value="css"&gt;CSS&lt;/option&gt;
+  &lt;option value="js"&gt;JavaScript&lt;/option&gt;
+&lt;/select&gt;
+                		</code></pre>
+						<h3>Multiple Selection:</h3>
+						<p>Allow multiple selections with the multiple attribute:</p>
+						<select multiple>
+							<option value="html">HTML</option>
+							<option value="css">CSS</option>
+							<option value="js">JavaScript</option>
+							<option value="python">Python</option>
+						</select>
+						<pre><code>
+
+&lt;select multiple&gt;
+  &lt;option value="html"&gt;HTML&lt;/option&gt;
+  &lt;option value="css"&gt;CSS&lt;/option&gt;
+  &lt;option value="js"&gt;JavaScript&lt;/option&gt;
+  &lt;option value="python"&gt;Python&lt;/option&gt;
+&lt;/select&gt;
+						</code></pre>
+					</td>
+				</tr>
+			</table>
+		</section>
+		<br><br>
+
+		<section id="Button Elements">
+			<table border="2" width="100%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>📑Button Elements</h1></th>
+                    </tr>
+				</thead>
+				<tr>
+					<td>
+						<ul>
+							<li><h3>Submit Button</h3>
+								<p>Submits the form data</p>
+								<input type="submit" value="Submit Form">
+								<pre><code>
+&lt;input type="submit" value="Submit Form"&gt;
+								</code></pre>
+							</li>
+							<li><h3>Reset Button</h3>
+								<p>Reset all forms value to the default</p>
+								<input type="reset" value="Reset Form">
+								<pre><code>
+&lt;input type="reset" value="Reset Form"&gt;
+								</code></pre>
+							</li>
+							<li><h3>Button Element</h3>
+								<p>A clickable button that can have custom functionality</p>
+								<button type="button">Click Me</button>
+								<pre><code>
+&lt;button type="button"&gt;Click Me&lt;/button&gt;
+								</code></pre>
+							</li>
+						</ul>
+						<img src="./assets/button.png" alt="Image: Button Types Comparison" width="30%" height="30%">
+					</td>
+				</tr>
+			</table>
+		</section>
+		<br><br>
+
+		<section id="Complete Form Example">
+			<table border="2" width="60%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>📑Complete Form Example</h1></th>
+                    </tr>
+				</thead>
+				<tr>
+					<td>
+									<form>
+										<fieldset>
+											<legend>Personal Information</legend>
+											
+											<p>
+												<label for="name">Full Name:</label><br>
+												<input type="text" id="name" name="name" required="" placeholder="Enter your full name">
+											</p>
+											
+											<p>
+												<label for="email">Email Address:</label><br>
+												<input type="email" id="email" name="email" required="" placeholder="Enter your email">
+											</p>
+											
+											<p>
+												<label for="password">Password:</label><br>
+												<input type="password" id="password" name="password" required="" placeholder="Create a password">
+											</p>
+											
+											<p>
+												<label for="dob">Date of Birth:</label><br>
+												<input type="date" id="dob" name="dob">
+											</p>
+										</fieldset>
+										<fieldset>
+											<legend>Additional Information</legend>
+											
+											<p>
+												<label>Gender:</label><br>
+												<input type="radio" id="male" name="gender" value="male">
+												<label for="male">Male</label>
+												
+												<input type="radio" id="female" name="gender" value="female">
+												<label for="female">Female</label>
+												
+												<input type="radio" id="other" name="gender" value="other">
+												<label for="other">Other</label>
+											</p>
+											
+											<p>
+												<label>Interests (select all that apply):</label><br>
+												<input type="checkbox" id="tech" name="interests" value="tech">
+												<label for="tech">Technology</label>
+												
+												<input type="checkbox" id="sports" name="interests" value="sports">
+												<label for="sports">Sports</label>
+												
+												<input type="checkbox" id="books" name="interests" value="books">
+												<label for="books">Books</label>
+											</p>
+											
+											<p>
+												<label for="country">Country:</label><br>
+												<select id="country" name="country">
+													<option value="">Select your country</option>
+													<option value="usa">United States</option>
+													<option value="canada">Canada</option>
+													<option value="uk">United Kingdom</option>
+													<option value="india">India</option>
+													<option value="australia">Australia</option>
+												</select>
+											</p>
+											
+											<p>
+												<label for="bio">Bio:</label><br>
+												<textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself"></textarea>
+											</p>
+										</fieldset>
+									</form>
+									<p>
+										<input type="submit" value="Register">
+										<input type="reset" value="Clear Form">
+									</p>
+									<img src="./assets/complete form.jpg" alt="Image: Complete Form Visualization" width="30%" height="30%">
+					</td>
+				</tr>
+			</table>
+		</section>
+		<br><br>
+
+		<section id="Summary">
+			<table border="2" width="100%" cellpadding="15">
+				<thead>
+					<tr>
+                        <th colspan="2" align="center"><h1>Summary</h1></th>
+                    </tr>
+				</thead>
+				<tr>
+					<td>
+						<ul>
+							<li>The <code>&lt;form&gt;</code> element and its attributes</li>
+							<li>Various input types (text, password, email, number, etc.)</li>
+							<li>Selection inputs (radio buttons and checkboxes)</li>
+							<li>Specialized inputs (date, color, range, file)</li>
+							<li>The <code>&lt;textarea&gt;</code> element for multi-line text</li>
+							<li>The <code>&lt;select&gt;</code> element for dropdowns</li>
+							<li>Button elements (submit, reset, and button)</li>
+							<li>A complete form example with various elements</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+	</main>
+	 <br><br>
+    <br><br>
+ <footer>
+<nav>
+  <br><br>
+  <p><h3>Navigate to:</h3></p>
+  <table border="2" width="100%" cellpadding="15">
+    <tr>
+      <td>
+          <a href="./index.html"> 🏠 Home</a> |
+          <a href="./Lecture1.html"> 🔗 Lecture 1</a> |
+          <a href="./Lecture2.html"> 🔗 Lecture 2</a> |
+          <a href="./Lecture3.html"> 🔗 Lecture 3</a> |
+          <a href="./Lecture4.html"> 🔗 Lecture 4</a> |
+          <a href="./Lecture5.html"> 🔗 Lecture 5</a> |
+          <a href="./Lecture6.html"> 🔗 Lecture 6</a>
+          <br><br>
+          <a href="#top">⬆ Back to Top</a>
+      </td>
+    </tr>
+   </table>
+</nav>
+<br><br>
+<hr>
+  <table width="100%">
+    <tr>
+      <td >
+        <p> Defence-Book &copy; 2025. All rights reserved.</p>
+        <p>Follow me:
+           <a href="https://x.com/MdZafar_07">Twitter</a> | 
+           <a href="https://linkedin.com/in/md-zafaruddin-35236427b">LinkedIn</a>
+        </p>
+      </td>
+    </tr>
+  </table> 
+</footer>
+</body>
+</html>
+              
+          
+    
+  
+             
+              
+         

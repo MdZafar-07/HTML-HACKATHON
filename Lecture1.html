@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LECTURE-1: How Does the Internet Work?</title>
+</head>
+<body>
+  <header>
+     <table width="100%"  >
+      <tr>
+        <td width="90%" valign="top" >
+            <h1>LECTURE-1</h1>
+            <h2>📘 Notes: How Does the Internet Work?<h2>
+        </td>
+        <td width="20%" valign="top" >
+          <aside>
+            <nav>
+              <a href="index.html"><button type="button" >🏠Home</button></a>
+              <!-- <a href="./Lecture1.html"><button type="button" >🔵Lecture 1</button></a>  -->
+              <a href="./Lecture2.html"><button type="button" >🔵Next ></button></a> 
+              <!-- <a href="./Lecture3.html"><button type="button" >🔵Lecture 3</button></a> 
+              <a href="./Lecture4.html"><button type="button" >🔵Lecture 4</button></a> 
+              <a href="./Lecture5.html"><button type="button" >🔵Lecture 5</button></a> 
+              <a href="./Lecture6.html"><button type="button" >🔵Lecture 6</button></a> -->
+            </nav>
+         </aside>
+      </td>
+    </tr>
+    </table>
+  </header>
+  <hr>
+  <main>
+    <nav>
+      <h2><b>Contents:</b></h2>
+      <ul>
+        <li><a href="#How Does Internet Work">How Does Internet Work</a></li>
+        <li><a href="#IP Address,">IP Address,</a></li>
+        <li><a href="#MAC Address">MAC Address</a></li>
+        <li><a href="#Port Number">Port Number</a></li>
+        <li><a href="#DNS">DNS</a></li>
+      </ul>
+    </nav>
+    <hr>
+<section id="How Does Internet Work">
+  <table border= "2"  width="100%" cellpadding="15">
+    <thead>
+      <tr>
+        <th colspan="2" align="center"><h1>🌍 HOW Does Internet Work</h1></th>
+      </tr>
+    </thead>
+    <tr>
+      <!-- Left Side Navigation -->
+      <td width="20%" valign="top">
+        <h3>Principle 1:<br> The Need to Share Information</h3>
+         <table>
+        <tr>
+          <td>
+            <img src="./assets/1.jpg" alt="internet illustration" width="100%" height="100%">
+          </td>
+          </tr>
+         </table>
+      </td>
+
+      <!-- Main Content -->
+      <td width="80%" valign="top" >
+        <h3>INFORMATION SHARING</h3>
+        <p>The most fundamental truth is that we have information on one computer (Computer A) and we want it to be on another computer (Computer B). These computers are not in the same room.<br>
+
+How do we solve this? The simplest, most primitive way is to physically carry the information (e.g., on a USB stick). This works, but it's slow and doesn't scale. We need a direct, electronic connection.
+<br><br>
+So, we run a cable (like an ethernet cable or a fiber optic line) between Computer A and Computer B. We can now send electrical signals or pulses of light down this cable. We can agree on a simple code: a high-voltage signal means "1," and a low-voltage signal means "0."<br><br>
+We have just created the most basic form of a network: a direct link. We can now send bits (1s and 0s) between two computers.</p>
+      </td>
+    </tr>
+    <tr>
+      <!-- Left Side Navigation -->
+      <td width="20%" valign="top">
+        <h3>Principle 2:<br> The Problem of Scale</h3>
+         <table>
+        <tr>
+          <td>
+            <img src="./assets/2.png" alt="LAN illustration" width="100%" height="100%">
+          </td>
+         </table>
+      </td>
+
+      <!-- Main Content -->
+      <td width="80%" valign="top">
+        <h3>SCALING PROBLEM</h3>
+        <p>This works for two computers. But what if we have three computers (A, B, and C) and they all need to talk to each other? We would need a cable from A to B, from B to C, and from A to C. For four computers, we'd need six cables. For 100 computers, we'd need 4,950 cables.<br>
+
+This is a failure of scale. Connecting every machine to every other machine directly is physically impossible.
+
+The logical solution is to have a central device. Every computer connects to this one central point (let's call it a Switch). When Computer A wants to talk to Computer C, it sends the message to the switch, and the switch forwards it only to Computer C.
+<br><br>
+We have just invented a Local Network. A group of computers in close proximity (like an office or a home) can now communicate efficiently..</p>
+      </td>
+    </tr>
+     <tr>
+      <!-- Left Side Navigation -->
+      <td width="20%" valign="top">
+        <h3>Principle 3:<br> Connecting Networks</h3>
+         <table>
+        <tr>
+          <td>
+            <img src="./assets/3.png" alt="Router illustration" width="100%" height="100%">
+          </td>
+         </table>
+      </td>
+
+      <!-- Main Content -->
+      <td width="80%" valign="top">
+        <h3>NETWORK CONNECTIONS</h3>
+        <p>Now, our office has a local network. Another office across town also has its own local network. How does a computer on our network talk to a computer on their network?
+
+We face the same scaling problem. We can't run a wire from every computer in our office to every computer in theirs.<br>
+
+The logical solution is to connect the networks themselves. We need a special, dedicated computer that is connected to our network and also connected to their network. Its only job is to pass messages, or "route" traffic, from one network to the other. Let's call this device a
+<b>Router</b>. <br><br>
+Now, if we want to connect to a third network, we just connect our router to their router. Suddenly, we can build a massive, sprawling web by connecting networks to other networks.
+
+This is the fundamental truth of the Internet. The Internet is a "network of networks." It is not one giant cloud; it is millions of private and public local networks all connected by these special routing devices.</p>
+      </td>
+    </tr>
+     <tr>
+      <!-- Left Side Navigation -->
+      <td width="20%" valign="top">
+        <h3>Principle 4:<br>Addressing [Finding Anyone]</h3>
+         <table>
+        <tr>
+          <td>
+            <img src="./assets/4.png" alt="IP  illustration" width="100%" height="100%">
+          </td>
+         </table>
+      </td>
+
+      <!-- Main Content -->
+      <td width="80%" valign="top">
+        <h3>ADDRESSING [IP]</h3>
+        <p>We have built a global web of interconnected networks. If I'm on my computer in my office, how do I send a message to a specific server in another country? There are millions of computers. I need a unique address for every single device.<br>
+This gives rise to the need for a universal addressing system. Just like the postal service needs a unique street address for every house in the world, our network of networks needs a unique address for every connected device. <br><br>
+This is the reason the <b>IP Address (Internet Protocol Address)</b> exists. It's a unique label (e.g., 142.250.184.142) assigned to each device. When a router sees a message, it looks at the destination IP address and says, "Based on this address, I don't need to send it to the network on my left; I need to send it to the network on my right to get it one step closer to its final destination." Routers don't know the full path; they just know the next best "hop" to send the message on..</p>
+      </td>
+    </tr>
+
+  <tr>
+      <!-- Left Side Navigation -->
+      <td width="20%" valign="top">
+        <h3>Principle 5:<br>Reliability & Fairness</h3>
+         <table>
+        <tr>
+          <td>
+            <img src="./assets/5.png" alt="IP  illustration" width="100%" height="100%">
+          </td>
+         </table>
+      </td>
+
+      <!-- Main Content -->
+      <td width="80%" valign="top">
+        <h3>RELIABILITY & FAIRNESS</h3>
+        <p>If I want to send a large file, like a 1-hour video, it is a huge stream of data. If I try to send it all at once:<br>
+          <ul>
+            <li>I would completely monopolize the connection, and no one else could send anything until my video was done.</li>
+            <li>If even a single bit of information gets corrupted during the transfer, the entire file is ruined, and I have to start over from the beginning.</li>
+          </ul>
+This is inefficient and unreliable. The logical solution is to break the large file into many thousands of small, numbered pieces. Let's call them <b>Packets</b>. <br><br>
+Each packet is like a tiny envelope. It contains:
+          <ul>
+            <li>A small piece of the data (a "payload").</li>
+            <li>The destination IP address (where it's going).</li>
+            <li>The sender's IP address (so they can reply).</li>
+            <li>A number, so the receiving computer knows how to reassemble them in the correct order ("Packet 1 of 5,000," "Packet 2 of 5,000," etc.).</li>
+          </ul>
+          These packets can travel independently across the internet, sometimes even taking different routes. The receiving computer gathers all the packets, checks if any are missing (and requests them again if they are), and reassembles them in the correct order to recreate the original file.<br><br>
+          This system of rules for addressing, breaking down, sending, and reassembling data is called a Protocol. The main one used on the internet is <b>TCP/IP (Transmission Control Protocol / Internet Protocol)</b>.
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <h2>Summary from Principles</h2>
+        <p>So, the internet isn't magic. It's a series of logical solutions to a series of fundamental problems:
+          <ol>
+            <li><b>Problem:</b> Share data between two computers. Solution: A direct <b>physical link.</b></li>
+            <li><b>Problem:</b>  Connect many computers efficiently.<b>Solution:</b> A <b>local network</b> with a central switch.</li>
+            <li><b>Problem:</b> Connect many networks. Solution: A <b>router</b> that connects networks.</li>
+            <li><b>Problem:</b> Find any computer in the world. Solution: A universal <b>addressing system (IP)</b>.</li>
+            <li><b>Problem:</b> Send large files reliably and fairly. Solution: Break data into small <b>packets</b> sent via <b>protocols (TCP/IP)</b>.</li>
+          </ol>
+        </p>
+      </td>
+    </tr>
+    </table>
+    </section>
+  <section id="IP Address,">
+    <br><br>
+    <table border= "2"  width="100%" cellpadding="15">
+    <thead>
+      <tr>
+        <th colspan="2" align="center"><h1>🌍 IP Address</h1></th>
+      </tr>
+    </thead>
+    
+
+    <tr>
+      <td>
+        <p><b>An IPv4 (Internet Protocol version 4)</b> address is the classic IP address format everyone is used to seeing.<br><br>
+
+<b>Structure:</b> It's a 32-bit number. To make it readable for humans, we divide it into four 8-bit sections, and write each section as a decimal number from 0 to 255.<br><br>
+
+Example: 172.217.16.142 (one of Google's addresses)<br><br>
+
+<b>The Big Problem (The Why):</b> A 32-bit number means there's a hard limit on the total number of possible addresses: 2^32, which is about <b>4.3 billion.</b><br><br>
+
+When the internet was designed, 4.3 billion seemed like an infinite number. But with the explosion of laptops, phones, servers, smart watches, and even smart refrigerators, we quickly realized we would run out. This scarcity is the <b>single most important reason</b> we have public and private IPs.<br><br>
+
+<b>IPv4:</b> 32-bit (~4.3 billion). Example: 172.217.16.142<br><br>
+
+<b>IPv6:</b> 128-bit (~340 undecillion). Example: 2001:0db8:85a3::8a2e:0370:7334</p>
+      
+      <table border="4" width="100%" cellpadding="15">
+        <tr>
+          <td width="50%" valign="top">
+            <h3>Public IP Address</h3>
+            <hr>
+            <p>A Public IP address is your <b>global, unique address on the internet.</b></p>
+            <ul>
+              <li><b>Analogy:</b> The company's main, public phone number.</li>
+              <li><b>Uniquness:</b> It must be <b>globally unique.</b> No two devices on the internet can have the same public IP address at the same time.</li>
+              <li><b>Purpose:</b>To be reachable from anywhere in the world. This is the address that web servers, email servers, and any other public service use.</li>
+              <li><b>Asignment:</b>It's assigned by your <b>Internet Service Provider (ISP)</b> and is how the rest of the internet finds you.</li>
+              <li><b>WHO has one?</b>  Your home router has one. The server hosting google.com has one. The server hosting Netflix has one.</li>
+            </ul>
+          </td>
+           <td width="50%" valign="top">
+            <h3>Private IP Address</h3>
+               <hr>
+            <p>A Private IP address is <b>a local address used only within your own private network</b> (e.g., your home Wi-Fi, your office network).</p>
+            <ul>
+              <li><b>Analogy:</b> The employee's private, 4-digit extension number.</li>
+              <li><b>Uniquness:</b>  It only needs to be unique <b>on your local network.</b> My laptop can have the address 192.168.1.100 on my home Wi-Fi, and your laptop can have the exact same address on your home Wi-Fi. They don't conflict because they are in separate, private networks</li>
+              <li><b>Purpose:</b>To allow devices on the same local network to communicate with each other without needing a globally unique address for each one. Your laptop talks to your printer using private IPs. Your phone streams to your Chromecast using private IPs.</li>
+              <li><b>Asignment:</b>It is assigned to your devices by your own <b>router.</b></li>
+              <li><b>Reserved Ranges:</b> The internet authorities have reserved specific ranges of addresses just for this purpose. If you see an IP address starting with one of these, you know it's a private address:
+                  <ul>
+                    <li>10.0.0.0 to 10.255.255.255 (Used by large corporations)</li>
+                    <li>172.16.0.0 to 172.31.255.255 (Used by medium-sized networks)</li>
+                    <li>192.168.0.0 to 192.168.255.255 (Most common for home networks)</li>
+                  </ul>
+                </li>
+            </ul>
+          </td>
+          </tr>
+          </table>
+          </td>
+    </tr>
+    <tr>
+      <td>
+        <h3>IPv6</h3>
+        <p><b></b>IPv6 (Internet Protocol version 6)</b> is the next generation of the Internet Protocol. Its primary purpose was to solve the address exhaustion problem of IPv4.<br><br>
+        The fundamental difference is the size of the address:.<br><br>
+          <ul>
+            <li><b>IPv4:</b> Uses a <b>32-bit</b> address, giving us ~4.3 billion unique addresses.</li>
+            <li><b>IPv6:</b> Uses a <b>128-bit</b> address</li>
+          </ul> <br><br>
+          The difference between 32-bit and 128-bit is not 4x. It's an exponential leap that is difficult to comprehend.<br><br>
+
+The number of possible IPv6 addresses is 2^128, which is roughly:<br><br>
+
+<b>340,000,000,000,000,000,000,000,000,000,000,000,000 (340 undecillion)</b><br><br>
+
+<b>What Does an IPv6 Address Look Like??</b><br><br>
+Because it's so long, the format is different. It uses <b>hexadecimal</b></hexadecimal> (numbers 0-9 and letters a-f) instead of just decimal numbers.<br><br>
+
+An example of a full IPv6 address:<br><br>
+
+2001:0db8:85a3:0000:0000:8a2e:0370:7334
+
+It's broken down into:<Br><br>
+  <ul>
+    <li>Eight groups of four hexadecimal characters.</li>
+    <li>The groups are separated by colons (:).</li>
+  </ul>
+</p>
+      </td>
+    </tr>           
+    </table>
+  </section>
+    <br><br>
+  <section id="MAC Address">
+    <table border= "2"  width="100%" cellpadding="15">
+    <thead>
+      <tr>
+        <th colspan="2" align="center"><h1>🖥️ MAC Address</h1></th>
+      </tr>
+    </thead>
+    
+    <tr>
+      <td>
+        <p>
+          <b>A MAC (Media Access Control) Address</b> is a unique, permanent serial number burned into every network-capable piece of hardware (your laptop's Wi-Fi card, your phone, your smart TV, the network port on your desktop).<br><br>
+
+To track you, if you get offline and someone get the ip, they will get your message.<br><br>
+
+A MAC address is a <b>48-bit number.</b> To make it readable for humans, it's typically written as <b>12 hexadecimal digits.</b><br><br>
+
+The most common ways you'll see it displayed are:<br><br>
+      <ol>
+        <li><b>Colon-Separated (Most Common):</b></Colon-Separated> 3C:22:FB:A3:B4:C5</li>
+        <li><b>Hypen-Separated (Common in Windows):</b></Colon-Separated>  3C-22-FB-A3-B4-C5</li>
+        <li><b>Period-Separated (Used by Cisco and other network gear):</b></Colon-Separated> 3c22.fba3.b4c5</li>
+        <li><b>No-Separator (Less common, seen in some software):</b></Colon-Separated> 3C22FBA3B4C5</li>
+      </ol>
+      <img src="./assets/6.png" alt="MAC illustration" width="50%" height="50%">
+        </p>
+        <h3>How to Find MAC Address</h3>
+        <p>
+          <b>Windows</b>
+          <ol>
+            <li><b>Open Command Prompt:</b>
+              <ul>
+                <li>Click the <b>Start Menu.</b></li>
+                <li>Press <b>Win + R</b>, type <b>cmd</b>, and hit <b>Enter.</b></li>
+                <li>(Alternatively,Type cmd and press <b>Enter</b>)</li>
+              </ul>
+            </li>
+            <li>Run the Command:
+              <ul>
+                <li>In the black window that appears, type the following command and press Enter:<br>
+                  <b>ipconfig /all</b></li>
+                <li>If you only want to see the MAC addresses without all the other details, you can use the getmac command.
+                  <br><b>getmac /v /fo list</b></li>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </p>
+        <p>
+          <b>MacOS</b>
+          <ol>
+            <li><b>Open Termibnal:</b>
+              <ul>
+                <li>Open <b>Spotlight Search</b> (press Cmd + Space).</li>
+                <li>Type Terminal and press <b>Enter.</b></li>
+              </ul>
+            </li>
+            <li>Run the Command:
+              <ul>
+                <li>In the window that appears, type the following command and press Enter:
+                  <br><b>ifconfig</b>
+                </li>
+          
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </p>
+      </td>
+    </tr>
+  </table>
+  </section>
+ <br><br>
+ <section id="Port Number">
+ <table border= "2"  width="100%" cellpadding="15">
+    <thead>
+      <tr>
+        <th colspan="2" align="center"><h1>🔌 Port Numbers</h1></th>
+      </tr>
+    </thead>
+    
+    <tr>
+      <td>
+        <p>
+          Port numbers are <b>numerical identifiers (0-65535) in computer networking that identify specific applications or services on a device. </b> They work with IP addresses to direct network traffic to the correct service on a machine, with common ports assigned to standard applications like HTTP (port 80) and HTTPS (port 443).<br><br>
+
+A port number is a <b>16-bit</b> unsigned integer.<br><br>
+
+Let's break that down:<br><br>
+<ul>
+  <li><b>16-bit:</b> This means the number is stored using 16 binary digits (1s and 0s).</li>
+  <li><b>Unsigned:</b>This means it cannot be negative. The values are all positive.</li>
+</ul>
+<br>  
+Because it's a 16-bit number, the total number of possible ports is 2^16, which equals <b>65,536</b>
+        </p>
+        <h2><b>The Practical Format: The Three Categories</b></h2>
+        <p>
+          To prevent chaos, the internet authorities (IANA) have divided the 65,536 available ports into three categories. This is the most practical format for you as a developer to understand.
+            <ol>
+              <li><b>Well-Known Ports (Range: 0 - 1023)</b><br><br>
+              These are the VIPs of the port world. They are reserved for the most common, fundamental, and standardized internet services.<br><br>
+                 <ul>
+                  <li><b>Controlled By:</b> Strictly managed by IANA.</li>
+                  <li><b>Previleges</b>:</b>On most operating systems (like Linux and macOS), you need administrator (root or sudo) privileges to run a program that listens on these ports. This is a security measure to prevent rogue applications from impersonating standard services.
+</li>
+                  <li><b>Key Examples for a Developer:</b><br>
+                    <ul>
+                      <li>HTTP (Port 80): The standard port for web traffic.</li>
+                      <li>HTTPS (Port 443): Secure web traffic using SSL/TLS.</li>
+                      <li>SMPT (Port 25):(Simple Mail Transfer Protocol) - For sending email.</li>
+                      <li>FTP (Port 21): File Transfer Protocol for transferring files.</li>
+                      <li>SSH (Port 22): Secure Shell for secure remote login and command execution.</li>
+                      <li>DNS (Port 53): Domain Name System for resolving domain names to IP addresses.</li>
+                    </ul>
+                  </li>
+                </ul>
+                </li>
+                  <li><b>Registered Ports (Range: 1024 - 49151)</b><br><br>
+                    These ports are for specific applications or services that are not as universal as the "well-known" ones. Companies and developers can register a port for their software to avoid conflicts with other applications.<br><br>
+                    <ul>
+                      <li><b>Controlled By:</b> IANA manages the registration process, but these ports are not as tightly controlled as the well-known ports.</li>
+                      <li><b>Previleges:</b> You do not need special privileges to use these ports. Any application can listen on these ports.</li>
+                      <li><b>Key Examples for a MERN Developer:</b><br>
+                        <ul>
+                          <li>3000: The unofficial but extremely common default for running React and Node.js development servers. You will use this constantly.</li>
+                          <li>3306: MySQL databases.</li>
+                          <li>R5432: PostgreSQL databases.</li>
+                          <li>27017: The default port for MongoDB, the database in the MERN stack.</li>
+                          <li>8080: A very common alternative port for web servers during development.</li>
+                        </ul>
+                      </li>
+                      </ul>
+                  </li>
+                  <li><b>Dynamic / Private / Ephemeral Ports (Range: 49152 - 65535)</b><br><br>
+                    These ports are not meant for public-facing servers. Their job is completely different.
+                    <ul>
+                      <li><b>Controlled By:</b> Not controlled or registered. They are free for anyone to use.</li>
+                      <li><b>Previleges:</b> No special privileges are needed to use these ports.</li>
+                      <li><b>Key Examples for a Developer:</b><br>
+                        <ul>
+                          <li>When your computer connects to a web server (like google.com), it uses one of these ports as the "source port" for the connection. This port is chosen randomly from this range and is used only for the duration of that connection.</li>
+                          <li>If you open multiple tabs in your browser, each tab might use a different ephemeral port to connect to the same web server.</li>
+                        </ul>
+                      </li>
+                      </ul>
+                  </li>
+            </ol>
+            <img src="./assets/7.png" alt="PORT illustration" width="50%" height="50%">
+        </p>
+      </td>
+        </tr>
+        </table>
+        </section>
+
+        <br><br>
+<section id="DNS">
+ <table border= "2"  width="100%" cellpadding="15">
+    <thead>
+      <tr>
+        <th colspan="2" align="center"><h1>🌐 DNS (Domain Name System)</h1></th>
+      </tr>
+    </thead>
+    
+    <tr>
+      <td>
+          <p>
+            DNS is the global, distributed system that translates the human-friendly domain names into the computer-friendly IP addresses. Without it, you'd have to memorize hundreds of IP addresses to browse the web.
+            <h3><b>Step 1: Checking the Local Cache (Do I already know this?)</b></h3>
+            Before your computer does any work, it checks if it already has the answer. Speed is everything. It checks in this order:<br><br>
+            <ul>
+              <li><b>Browser Cache:</b> Your web browser (like Chrome or Firefox) keeps a small list of recently looked-up domain names and their IP addresses. If it finds the domain here, it uses that IP address immediately.</li>
+              <li><b>Operating System Cache:</b> If the browser doesn't have it, your computer's operating system (like Windows or macOS) has its own cache. It checks here next.</li>
+              <li><b>Router Cache:</b> If neither the browser nor the OS has it, your home router might have a cache of recent lookups. It checks here last before going out to the internet.</li>
+            </ul>
+            <h3><b>Step 2: Asking the Recursive Resolver (The Middleman)</b></h3>
+            If the answer isn't in any local cache, your computer asks a special server called a <b>Recursive Resolver</b>. This is usually provided by your Internet Service Provider (ISP) or a third-party DNS service like Google Public DNS or Cloudflare.<br><br>
+            The Recursive Resolver's job is to find the IP address for you. It does this by asking other DNS servers on the internet.<br><br>
+            <h3><b>Step 3: Querying the Root Name Servers (The Top of the Hierarchy)</b></h3>
+            The Recursive Resolver starts at the top of the DNS hierarchy with the <b>Root Name Servers</b>. There are 13 sets of these servers worldwide, labeled A through M. They don't know the answer to your specific query, but they do know where to find it.<br><br>
+            The Root Name Servers respond with the address of the <b>TLD (Top-Level Domain) Name Servers</b> for the domain you're looking up. The TLD is the last part of the domain name, like .com, .org, or .net.<br><br>
+            <h3><b>Step 4: Querying the TLD Name Servers (The Domain's Extension)</b></h3>
+            The Recursive Resolver then asks the appropriate TLD Name Server for the domain. For example, if you're looking up example.com, it asks the .com TLD Name Server.<br><br>
+            The TLD Name Server doesn't have the exact IP address either, but it knows where to find it. It responds with the address of the <b>Authoritative Name Servers</b> for the specific domain.<br><br>
+            <h3><b>Step 5: Querying the Authoritative Name Servers (The Final Authority)</b></h3>
+            Finally, the Recursive Resolver asks the Authoritative Name Servers for the domain. These servers are managed by the organization that owns the domain (like a web hosting company or a large corporation).<br><br> 
+            <img src="./assets/8.png" alt="DNS illustration" width="50%" height="50%"><br><br>
+
+          </p>
+
+      </td>
+    </tr>
+  </table>
+
+</section>
+    
+    </main>
+<br><br>
+<br><br>
+ <hr>
+ <footer>
+<nav>
+  <br><br>
+  <p><h3>Navigate to:</h3></p>
+  <table border="2" width="100%" cellpadding="15">
+    <tr>
+      <td>
+          <a href="./index.html"> 🏠 Home</a> |
+          <a href="./Lecture1.html"> 🔗 Lecture 1</a> |
+          <a href="./Lecture2.html"> 🔗 Lecture 2</a> |
+          <a href="./Lecture3.html"> 🔗 Lecture 3</a> |
+          <a href="./Lecture4.html"> 🔗 Lecture 4</a> |
+          <a href="./Lecture5.html"> 🔗 Lecture 5</a> |
+          <a href="./Lecture6.html"> 🔗 Lecture 6</a>
+          <br><br>
+          <a href="#top">⬆ Back to Top</a>
+      </td>
+    </tr>
+   </table>
+</nav>
+<br><br>
+<hr>
+  <table width="100%">
+    <tr>
+      <td >
+        <p> Defence-Book &copy; 2025. All rights reserved.</p>
+        <p>Follow me:
+           <a href="https://x.com/MdZafar_07">Twitter</a> | 
+           <a href="https://linkedin.com/in/md-zafaruddin-35236427b">LinkedIn</a>
+        </p>
+      </td>
+    </tr>
+  </table> 
+</footer>
+</body>
+</html>
